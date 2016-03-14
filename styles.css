@@ -367,17 +367,42 @@ th {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Baoli';
+  src: url("fonts/stbaoli-sc-regular-webfont.eot");
+  src: url("fonts/stbaoli-sc-regular-webfont.eot?#iefix") format("emb edded-opentype"), url("fonts/stbaoli-sc-regular-webfont.woff2") format("woff2"), url("fonts/stbaoli-sc-regular-webfont.woff") format("woff"), url("fonts/stbaoli-sc-regular-webfont.ttf") format("truetype"), url("fonts/stbaoli-sc-regular-webfont.svg#baoli_scregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@-webkit-keyframes horiz {
+  from {
+    width: 0%; }
+  to {
+    width: 100%; } }
+
 @keyframes horiz {
   from {
     width: 0%; }
   to {
     width: 100%; } }
 
+@-webkit-keyframes vert {
+  from {
+    height: 0%; }
+  to {
+    height: 100%; } }
+
 @keyframes vert {
   from {
     height: 0%; }
   to {
     height: 100%; } }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @keyframes fade {
   from {
@@ -400,8 +425,11 @@ html {
   html::before, html::after {
     content: "";
     position: fixed;
+    -webkit-animation: horiz 1s;
     animation: horiz 1s;
+    -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     height: 2px;
     background: #524831; }
@@ -416,7 +444,7 @@ body {
   background: #E8ECF3;
   color: #524831; }
   body em {
-    font-family: Baoli SC;
+    font-family: Baoli;
     font-size: 1.25em;
     letter-spacing: -0.5px;
     line-height: 0.5em; }
@@ -424,8 +452,11 @@ body {
     content: "";
     position: fixed;
     width: 2px;
+    -webkit-animation: vert 1s;
     animation: vert 1s;
+    -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     background: #524831; }
   body::before {
@@ -441,8 +472,11 @@ body {
     display: block;
     margin: 0 auto;
     opacity: 0;
+    -webkit-animation: fade 1.5s;
     animation: fade 1.5s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s; }
   body .ships-logo {
     opacity: 0;
@@ -450,8 +484,11 @@ body {
     margin: 4em auto 3em;
     position: relative;
     text-align: center;
+    -webkit-animation: fade 1.5s;
     animation: fade 1.5s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-delay: 1s;
     animation-delay: 1s; }
     body .ships-logo img {
       margin: 0 auto;
@@ -471,13 +508,16 @@ body {
         padding: 0em 0.5em 0.125em 0.5em;
         font-size: 1.25em;
         letter-spacing: -0.5px;
-        font-family: Baoli SC; }
+        font-family: Baoli; }
       body .ships-logo:hover::after {
         opacity: 1; } }
   body section {
     opacity: 0;
+    -webkit-animation: fade 1.5s;
     animation: fade 1.5s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-delay: 1.5s;
     animation-delay: 1.5s;
     margin-bottom: 5em; }
     @media screen and (min-width: 768px) {

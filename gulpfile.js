@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     neat = require('node-neat').includePaths;
 
 gulp.task('styles', function() {
@@ -7,6 +8,10 @@ gulp.task('styles', function() {
         .pipe(sass({
             includePaths: ['styles'].concat(neat)
         }))
+        .pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
         .pipe(gulp.dest(''))
 });
 
