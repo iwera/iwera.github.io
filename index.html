@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>On the beach « Ships in the night »</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <img class="otb-logo" src="img/On-the-beach.svg" alt="On the beach" />
+
+        <div class="ships-logo">
+            <img src="img/Typemass.svg" alt="Ships in the night" />
+        </div>
+
+        <section>
+            <article>
+
+                <p>
+                    Seeing you laugh and not knowing what you are laughing about. Seeing you cry and wanting to cry with you. Seeing someone look at you and being able to feel the weight of their stare. Seeing you over there and wishing you were here with me.
+                </p>
+
+                <p>
+                    <em>Ships in the night</em> is a series of love letters between artworks floating in a festival. Responding to the aesthetic and conceptual elements of various <a href="http://www.nextwave.org.au">Next Wave Festival</a> projects, a program of creative texts will be read, published, or hidden alongside
+                    each, aiming to create new relationships and weave new conversations across the Festival.
+                </p>
+
+                <p>Come along to one or all of the performances or listen to the <em>Ships in the night</em> podcast (here soon), to map your own journey through the festival&hellip;</p>
+            </article>
+
+            <aside>
+
+                <p>Live readings—</p>
+
+                <ul>
+                    <li>West Space<br/>Saturday 7 May, 2pm</li>
+                    <li>Gertrude Contemporary<br/>Tuesday 10 May, 5pm</li>
+                    <li>Meat Market<br/>Friday 13 May, 2pm</li>
+                    <li>&amp; more soon</li>
+                </ul>
+
+                <div class="logos">
+
+                    <a href=""><img src="img/logos/nw.png" /></a>
+                    <a href=""><img src="img/logos/ozco.png" /></a>
+                    <a href=""><img src="img/logos/cv.png" /></a>
+                    <a href=""><img src="img/logos/mel.png" /></a>
+
+
+                    <small><a target="blank" href="http://www.studioskiing.com.au/">Design by RM</a></small>
+                </div>
+
+            </aside>
+        </section>
+
+        <div class="hover-chart"></div>
+    </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+
+        var timer;
+
+        $('body').on('mousemove touchstart', function() {
+
+            clearTimeout(timer);
+
+            timer = setTimeout(function(){
+                $('.hover-chart').fadeIn(1000);
+            }, 8000);
+
+            $('.hover-chart').fadeOut(1000);
+        }).mousemove();
+
+
+    })
+    </script>
+
+</body>
+
+</html>
