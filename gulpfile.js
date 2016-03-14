@@ -6,7 +6,8 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
     return gulp.src('styles.scss')
         .pipe(sass({
-            includePaths: ['styles'].concat(neat)
+            includePaths: ['styles'].concat(neat),
+            outputStyle: 'compressed'
         }))
         .pipe(autoprefixer({
 			browsers: ['last 2 versions'],
