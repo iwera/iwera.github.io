@@ -19,6 +19,17 @@ $tablet: 768px;
 }
 
 @font-face {
+	font-family: 'Univers Ex';
+	src: url('fonts/UniversLTStd-Ex.eot');
+	src: url('fonts/UniversLTStd-Ex.eot?#iefix') format('embedded-opentype'),
+		url('fonts/UniversLTStd-Ex.woff') format('woff'),
+		url('fonts/UniversLTStd-Ex.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
     font-family: 'Baoli';
     src: url('fonts/stbaoli-sc-regular-webfont.eot');
     src: url('fonts/stbaoli-sc-regular-webfont.eot?#iefix') format('emb edded-opentype'),
@@ -200,13 +211,18 @@ body {
 				@include span-columns(4);
 				@include shift(1);
 				text-align:left;
-				margin-top:9.8em;
+				margin-top:11.2em;
 
 				p {
 					margin-bottom:0.7em;
 				}
 			}
 
+		}
+
+		p.ex {
+			font-family:"Univers Ex";
+			transform:rotate(-0.25deg);
 		}
 
         p {
