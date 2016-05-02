@@ -55,7 +55,6 @@
                     <a href=""><img src="img/logos/ozco.png" /></a>
                     <a href=""><img src="img/logos/mel.png" /></a>
 
-
                     <small><a target="blank" href="http://www.studioskiing.com.au/">Design by RM</a></small>
                 </div>
 
@@ -66,6 +65,11 @@
             <div class="event">
                 <div class="inside">
                     <h3>{{:date}}</h3>
+
+                    {{if mp3}}
+                        <div class="mp3">{{:mp3}}</div>
+                    {{/if}}
+                    
                     <h2>
                         <span>From</span> <a href="{{:from_link}}" target="_blank">{{:from}}</a><br/>
                         <span>to</span>   <a href="{{:to_link}}"   target="_blank">{{:to}}</a>
@@ -78,9 +82,7 @@
                             </div>
                         {{/if}}
                     </h2>
-                    {{if mp3}}
-                        <div class="mp3">{{:mp3}}</div>
-                    {{/if}}
+
 
                 </div>
             </div>
