@@ -70,7 +70,6 @@ a {
 
 html {
 
-
     font-family:Univers;
     font-size:20px;
     line-height:1.4;
@@ -293,8 +292,10 @@ body {
 	}
 
 	div.event {
-		border-top:2px solid $dark;
+		border-top:2px solid rgba($dark,1);
 		padding:3em 2em;
+		position:relative;
+
 		@include media($tablet) {
 			padding:3em;
 		}
@@ -303,6 +304,18 @@ body {
 	h3 {
 		margin-bottom:0.75em;
 	}
+
+	/*
+	@include media($tablet) {
+		h3 {
+			position: absolute;
+			top: 1em;
+			left: 3em;
+			transform-origin: top left;
+			transform: rotateZ(90deg);
+		}
+	}
+	*/
 
 	h2 {
 		a {
@@ -316,6 +329,11 @@ body {
 			@include media($tablet) {
 				display:inline-block;
 				width:6em;
+				border-bottom: 2px dotted #D9DCDF;
+
+				&.script-span {
+					border-bottom:0;
+				}
 			}
 
 		}
