@@ -20,17 +20,22 @@
         </div>
 
         <section>
-            <article>
+            <article id="main-content">
 
                 <p class="ex">
                     &laquo; Seeing you laugh and not knowing what you are laughing about. Seeing you cry and wanting to cry with you. Seeing someone look at you and feeling the weight of their stare. Seeing you over there and wishing you were here with me. &raquo;
                 </p>
 
                 <p>
-                    <em>Ships in the night</em> is a series of love-letters-as-podcasts between artworks floating in the Next Wave Festival 2016. These fictional texts and recordings respond to the aesthetic and conceptual elements of the various projects they riff off to weave strange and generative conversations between each. Below is a list of projects that <em>Ships in the Night</em> has responded to, and a schedule for their release through the Festival. The project also includes live readings of some of these letters at West Space, Gertrude Contemporary and the Meat Market during the Festival (see right for details). Subscribe to <em>Ships in the Night</em> on <a href="https://soundcloud.com/on-the-beach-podcast">Soundcloud</a> or <a href="https://itunes.apple.com/au/podcast/on-the-beach-podcast/id1108918775">iTunes</a> and use these letters to map your own, perhaps more obscure journey through the festival...
+                    <em>Ships in the night</em> is a series of love-letters-as-podcasts between artworks floating in the Next Wave Festival 2016. These fictional texts and recordings respond to the aesthetic and conceptual elements of the various projects they riff off to weave strange and generative conversations between each. Below is a list of projects that <em>Ships in the Night</em> has responded to, and a schedule for their release through the Festival. The project also includes live readings of some of these letters at West Space, Gertrude Contemporary and the Meat Market during the Festival (see right for details).
+
                 </p>
 
-                <p>Come along to one or all of the performances or listen to the <em>Ships in the night</em> podcast (here soon), to map your own journey through the festival&hellip;</p>
+                <p>
+                    Subscribe to <em>Ships in the Night</em> on <a href="https://soundcloud.com/on-the-beach-podcast">Soundcloud</a>, <a href="https://itunes.apple.com/au/podcast/on-the-beach-podcast/id1108918775">iTunes</a>, or <a href="http://feeds.soundcloud.com/users/soundcloud:users:222866622/sounds.rss
+                ">RSS</a>, and use these letters to map your own, perhaps more obscure journey through the festival&hellip;
+                </p>
+
             </article>
 
             <aside>
@@ -60,7 +65,7 @@
         <script id="eventTemplate" type="text/x-jsrender">
             <div class="event">
                 <div class="inside">
-                    <h3>{{:date_neat}}</h3>
+                    <h3>{{:date}}</h3>
                     <h2>
                         <span>From</span> <a href="{{:from_link}}" target="_blank">{{:from}}</a><br/>
                         <span>to</span>   <a href="{{:to_link}}"   target="_blank">{{:to}}</a>
@@ -93,45 +98,41 @@
 
     <script type="text/javascript">
 
-    var shipsRef = new Firebase("https://shipsinthenight.firebaseio.com/");
-    var eventTemplate = $.templates("#eventTemplate"); // Get compiled template
+        var shipsRef = new Firebase("https://shipsinthenight.firebaseio.com/");
+        var eventTemplate = $.templates("#eventTemplate"); // Get compiled template
 
-    shipsRef.child("events").on("value", function(data) {
-        $('#events').html('');
-        $(data.val()).each(function(){
-
-            var event = $(this)[0];
-
-            dateStr = event.date.toString();
-            event.dateObj = new Date(dateStr.substr(0,4), dateStr.substr(4,2), dateStr.substr(6,2));
-
-            var eventHtml = eventTemplate.render(event);
-            $("#events").append(eventHtml);
-
-        });
-    });
-
-    var otbTimer;
-
-    $(function(){
-
-        $('html').on('mousemove touchstart', function() {
-
-            clearTimeout(otbTimer);
-
-            otbTimer = setTimeout(function(){
-                $('.hover-chart').fadeIn(1000);
-            }, 6000);
-
-            $('.hover-chart').fadeOut(1000);
-        }).mousemove();
-
-        $('.odp-close').click(function(){
-            $('body').mousemove();
+        shipsRef.child("events").on("value", function(data) {
+            $('#events').html('');
+            $(data.val()).each(function(){
+                var event = $(this)[0];
+                var eventHtml = eventTemplate.render(event);
+                $("#events").append(eventHtml);
+            });
         });
 
+        shipsRef.child("main_content").on("value", function(data) {
+            $('#main-content').html(data.val());
+        });
 
-    })
+        var otbTimer;
+        $(function(){
+
+            $('html').on('mousemove touchstart', function() {
+
+                clearTimeout(otbTimer);
+
+                otbTimer = setTimeout(function(){
+                    $('.hover-chart').fadeIn(1000);
+                }, 6000);
+
+                $('.hover-chart').fadeOut(1000);
+            }).mousemove();
+
+            $('.odp-close').click(function(){
+                $('body').mousemove();
+            });
+        });
+
     </script>
 
     <script type="text/javascript">var odp_theme = "ships";</script>
